@@ -12,7 +12,9 @@
     "prepare": "husky install"
   },
   "dependencies": {
-    "vue": "^3.2.37"
+    "pinia": "^2.0.17",
+    "vue": "^3.2.37",
+    "vue-router": "4"
   },
   "devDependencies": {
     "@commitlint/cli": "^17.0.3",
@@ -38,9 +40,9 @@
   },
   "lint-staged": {
     "*.{js,jsx,vue,ts,tsx}": [
-      "npm run lint",
-      "npm run prettier"
+      "eslint ./src/**/*.{js,jsx,vue,ts,tsx} --fix",
+      "prettier --write ."
     ],
-    "*.{md,html,css}": "npm run prettier"
+    "*.{md,html,css}": "prettier --write ."
   }
 }

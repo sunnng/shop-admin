@@ -40,6 +40,7 @@ printUser(
     </a>
   </div>
   <HelloWorld msg="Vite + Vue" />
+  <router-view />
 </template>
 
 <style scoped>
