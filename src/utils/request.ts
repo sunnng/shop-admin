@@ -1,7 +1,14 @@
-import axios from 'axios'
+import axios, { AxiosRequestConfig } from 'axios'
+
+export interface ResponseModal<T = any> {
+  data: T
+  msg: string
+  status: number
+}
 
 const request = axios.create({
-  baseURL: 'https://shop.fed.lagou.com/api/admin'
+  // baseURL: import.meta.env.VITE_API_BASEURL
+  baseURL: '/1418426-0-default'
 })
 
 // 添加请求拦截器
@@ -30,4 +37,8 @@ request.interceptors.response.use(
   }
 )
 
-export default request
+export default <T>(config: AxiosRequestConfig) => {
+  return request(config).then((res) => {
+    return res.data as ResponseModal<T>
+  })
+}

@@ -1,0 +1,11 @@
+/// <reference types="vite/client" />
+
+interface ImportMetaEnv {
+  readonly VITE_API_BASEURL: string
+  // 更多环境变量...
+}
+
+// eslint-disable-next-line no-unused-vars
+interface ImportMeta {
+  readonly env: ImportMetaEnv
+}

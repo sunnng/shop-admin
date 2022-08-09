@@ -16,12 +16,12 @@ module.exports = {
   },
   plugins: ['vue', '@typescript-eslint'],
   rules: {},
-  overrides: [
-    {
-      files: ['src/api/**/*.ts'],
-      rules: {
-        camelcase: 'off'
-      }
-    }
-  ]
+  // overrides: [
+  //   {
+  //     files: ['src/api/**/*.ts'],
+  //     rules: {
+  //       camelcase: 'off'
+  //     }
+  //   }
+  // ]
 }
