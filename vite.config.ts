@@ -39,7 +39,7 @@ export default defineConfig({
   server: {
     proxy: {
       '/1418426-0-default': {
-        target: 'http://127.0.0.1:4523/m1/',
+        target: 'https://mock.apifox.cn/m1/',
         changeOrigin: true
         // rewrite: (path) => path.replace(/^\/api/, '')
       }
