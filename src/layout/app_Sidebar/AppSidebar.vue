@@ -29,6 +29,7 @@ import ToggleSideBar from './ToggleSideBar.vue'
 
   .app-sidebar__footer {
     height: 56px;
+    background: #262f3d;
   }
 }
 </style>

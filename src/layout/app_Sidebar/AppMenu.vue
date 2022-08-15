@@ -19,7 +19,7 @@ const handleClose = (key: string, keyPath: string[]) => {
     text-color="#c1c6c8"
     active-text-color="#fff"
     background-color="#1e222d"
-    default-active="2"
+    default-active="/"
     @open="handleOpen"
     @close="handleClose"
     :collapse="isCollapse"

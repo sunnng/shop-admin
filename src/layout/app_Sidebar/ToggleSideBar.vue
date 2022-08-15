@@ -15,9 +15,32 @@ const collapseIcon = computed(() => {
 </script>
 
 <template>
-  <el-icon color="#fff" :size="24" @click="handleCollapse">
-    <component :is="collapseIcon"></component>
-  </el-icon>
+  <div class="app-sidebar__collapse" @click="handleCollapse">
+    <el-icon color="#7c878d" :size="24">
+      <component :is="collapseIcon"></component>
+    </el-icon>
+  </div>
 </template>
 
-<style scoped lang="scss"></style>
+<style scoped lang="scss">
+.app-sidebar__collapse {
+  height: 100%;
+  position: relative;
+  cursor: pointer;
+
+  .el-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+  }
+}
+
+.app-sidebar__collapse:hover {
+  background: #344257;
+
+  .el-icon {
+    color: #fff;
+  }
+}
+</style>
