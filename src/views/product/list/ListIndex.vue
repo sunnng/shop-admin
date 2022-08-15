@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { getLoginInfo } from '@/api/common'
 import type { ILoginInfo } from '@/api/types/common'
-import { onMounted, ref } from 'vue'
 
 const list = ref<ILoginInfo['slide']>([])
 

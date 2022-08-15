@@ -18,6 +18,11 @@ export default defineConfig({
       // options are passed on to @vue/babel-plugin-jsx
     }),
     AutoImport({
+      imports: ['vue', 'vue-router'],
+      dts: true,
+      eslintrc: {
+        enabled: true // <-- this
+      },
       resolvers: [ElementPlusResolver()]
     }),
     Components({
@@ -41,7 +46,6 @@ export default defineConfig({
       '/1418426-0-default': {
         target: 'https://mock.apifox.cn/m1/',
         changeOrigin: true
-        // rewrite: (path) => path.replace(/^\/api/, '')
       }
     }
   }

@@ -4,6 +4,7 @@ module.exports = {
     es2021: true
   },
   extends: [
+    './.eslintrc-auto-import.json',
     'plugin:vue/vue3-strongly-recommended',
     // 'plugin:vue/vue3-essential',
     'standard',
