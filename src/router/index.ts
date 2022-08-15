@@ -10,7 +10,10 @@ const routes: RouteRecordRaw[] = [
       {
         path: '',
         name: 'home',
-        component: () => import('../views/home/HomeIndex.vue')
+        component: () => import('../views/home/HomeIndex.vue'),
+        meta: {
+          title: '首页'
+        }
       },
       productRoute
     ]

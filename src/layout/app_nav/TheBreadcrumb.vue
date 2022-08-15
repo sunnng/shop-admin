@@ -1,11 +1,22 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+const router = useRouter()
+
+const routes = computed(() => {
+  return router.currentRoute.value.matched.filter((item) => item.meta.title)
+})
+
+console.log(routes)
+</script>
 
 <template>
   <el-breadcrumb separator="/">
-    <el-breadcrumb-item :to="{ path: '/' }">homepage</el-breadcrumb-item>
-    <el-breadcrumb-item><a href="/">商品</a></el-breadcrumb-item>
-    <el-breadcrumb-item>promotion list</el-breadcrumb-item>
-    <el-breadcrumb-item>promotion detail</el-breadcrumb-item>
+    <el-breadcrumb-item
+      v-for="item in routes"
+      :key="item.path"
+      :to="{ path: item.path }"
+    >
+      {{ item.meta.title }}
+    </el-breadcrumb-item>
   </el-breadcrumb>
 </template>
 

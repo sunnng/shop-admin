@@ -4,11 +4,17 @@ const routes: RouteRecordRaw = {
   path: 'product',
   name: 'product',
   component: RouterView,
+  meta: {
+    title: '商品'
+  },
   children: [
     {
       path: 'product_list',
       name: 'product_list',
-      component: () => import('@/views/product/list/ListIndex.vue')
+      component: () => import('@/views/product/list/ListIndex.vue'),
+      meta: {
+        title: '商品列表'
+      }
     },
     {
       path: 'product_classify',
