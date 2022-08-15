@@ -1,3 +1,19 @@
+<script lang="ts" setup>
+import { Menu, HomeFilled, Histogram } from '@element-plus/icons-vue'
+import { useCommonStore } from '@/stores/common'
+import { storeToRefs } from 'pinia'
+
+// const commonStore = commonStore()
+const { isCollapse } = storeToRefs(useCommonStore())
+
+const handleOpen = (key: string, keyPath: string[]) => {
+  console.log(key, keyPath)
+}
+const handleClose = (key: string, keyPath: string[]) => {
+  console.log(key, keyPath)
+}
+</script>
+
 <template>
   <el-menu
     text-color="#c1c6c8"
@@ -10,17 +26,16 @@
     router
   >
     <el-menu-item index="/">
-      <el-icon><location /></el-icon>
-      <span>首页</span>
-    </el-menu-item>
-    <el-menu-item index="3" disabled>
-      <span>Navigator Three</span>
+      <el-icon><HomeFilled /></el-icon>
+      <template #title>首页</template>
     </el-menu-item>
     <el-menu-item index="4">
-      <span>Navigator Four</span>
+      <el-icon><Histogram /></el-icon>
+      <template #title>其他</template>
     </el-menu-item>
     <el-sub-menu index="1">
       <template #title>
+        <el-icon><Menu /></el-icon>
         <span>商品</span>
       </template>
       <el-menu-item-group title="商品管理">
@@ -37,22 +52,6 @@
     </el-sub-menu>
   </el-menu>
 </template>
-
-<script lang="ts" setup>
-import { Location } from '@element-plus/icons-vue'
-import { useStore } from '@/stores/common'
-import { storeToRefs } from 'pinia'
-
-// const commonStore = commonStore()
-const { isCollapse } = storeToRefs(useStore())
-
-const handleOpen = (key: string, keyPath: string[]) => {
-  console.log(key, keyPath)
-}
-const handleClose = (key: string, keyPath: string[]) => {
-  console.log(key, keyPath)
-}
-</script>
 
 <style scoped lang="scss">
 .el-menu {

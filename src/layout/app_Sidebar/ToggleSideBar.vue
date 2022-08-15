@@ -2,9 +2,9 @@
 import { Fold, Expand } from '@element-plus/icons-vue'
 import { computed } from 'vue'
 import { storeToRefs } from 'pinia'
-import { useStore } from '@/stores/common'
+import { useCommonStore } from '@/stores/common'
 
-const commonStore = useStore()
+const commonStore = useCommonStore()
 
 const { isCollapse } = storeToRefs(commonStore)
 const { handleCollapse } = commonStore
