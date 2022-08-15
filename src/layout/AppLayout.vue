@@ -1,10 +1,13 @@
 <script setup lang="ts">
-import AppSideBar from './app_Sidebar/AppSidebar.vue'
+import AppNav from './app_nav/AppNav.vue'
+import AppSideBar from './app_sidebar/AppSidebar.vue'
 </script>
 
 <template>
   <el-container class="app-layout">
-    <el-header style="background-color: #262f3e; color: #fff">Header</el-header>
+    <el-header>
+      <AppNav />
+    </el-header>
     <el-container>
       <el-aside>
         <AppSideBar />
@@ -22,6 +25,11 @@ import AppSideBar from './app_Sidebar/AppSidebar.vue'
 <style scoped lang="scss">
 .app-layout {
   height: 100vh;
+}
+.el-header {
+  height: 50px;
+  background-color: #262f3e;
+  padding-left: 0;
 }
 .el-aside {
   width: auto;
