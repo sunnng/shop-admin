@@ -37,13 +37,13 @@ import FullScreen from './FullScreen.vue'
   }
 }
 
+.app-nav__center {
+  flex: 1 1 200px;
+}
+
 .app-nav__end,
 .app-nav__start,
 .app-nav__center {
   height: 100%;
-}
-
-.app-nav__center {
-  flex: 1 1 200px;
 }
 </style>

@@ -5,7 +5,11 @@ import vueJsx from '@vitejs/plugin-vue-jsx'
 import path from 'path'
 import AutoImport from 'unplugin-auto-import/vite'
 import Components from 'unplugin-vue-components/vite'
+import IconsResolver from 'unplugin-icons/resolver'
+import Icons from 'unplugin-icons/vite'
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
+
+const pathSrc = path.resolve(__dirname, 'src')
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -17,21 +21,38 @@ export default defineConfig({
     vueJsx({
       // options are passed on to @vue/babel-plugin-jsx
     }),
+
     AutoImport({
       imports: ['vue', 'vue-router'],
-      dts: true,
+      dts: path.resolve(pathSrc, 'auto-imports.d.ts'),
       eslintrc: {
         enabled: true // <-- this
       },
-      resolvers: [ElementPlusResolver()]
+      resolvers: [
+        ElementPlusResolver(),
+        IconsResolver({
+          prefix: 'Icon'
+        })
+      ]
     }),
+
     Components({
-      resolvers: [ElementPlusResolver()]
+      dts: path.resolve(pathSrc, 'components.d.ts'),
+      resolvers: [
+        IconsResolver({
+          enabledCollections: ['ep']
+        }),
+        ElementPlusResolver()
+      ]
+    }),
+
+    Icons({
+      autoInstall: true
     })
   ],
   resolve: {
     alias: {
-      '@': path.join(__dirname, 'src')
+      '@': pathSrc
     }
   },
   css: {

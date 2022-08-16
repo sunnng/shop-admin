@@ -14,9 +14,9 @@ const toggleFullScreen = () => {
 
 <template>
   <div class="app-nav-icon-item">
-    <el-icon color="#a2aaad" :size="20" @click="toggleFullScreen"
-      ><FullScreen
-    /></el-icon>
+    <el-icon color="#a2aaad" :size="18" @click="toggleFullScreen">
+      <FullScreen />
+    </el-icon>
   </div>
 </template>
 
