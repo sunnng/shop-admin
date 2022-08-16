@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import TheBreadcrumb from './TheBreadcrumb.vue'
+import FullScreen from './FullScreen.vue'
 </script>
 
 <template>
@@ -13,7 +14,9 @@ import TheBreadcrumb from './TheBreadcrumb.vue'
       <TheBreadcrumb />
     </div>
     <div class="app-nav__center"></div>
-    <div class="app-nav__end"></div>
+    <div class="app-nav__end">
+      <FullScreen />
+    </div>
   </div>
 </template>
 
@@ -32,5 +35,15 @@ import TheBreadcrumb from './TheBreadcrumb.vue'
     padding-left: 20px;
     margin-right: 20px;
   }
+}
+
+.app-nav__end,
+.app-nav__start,
+.app-nav__center {
+  height: 100%;
+}
+
+.app-nav__center {
+  flex: 1 1 200px;
 }
 </style>
